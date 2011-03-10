@@ -8,7 +8,7 @@ responses = []
 
 while (line = file.gets)
 	# Create responses
-	puts line
+	#puts line
 	tokens = line.split(delim)
 	choices = tokens[1..4].map do |r|
 		QuestionResponse.create(:text => r)
