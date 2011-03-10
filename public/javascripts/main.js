@@ -1,5 +1,5 @@
 spoton = {};
-spoton.baseurl = 'http://www.spotontrivia.com/api/';
+spoton.baseurl = 'http://spoton.heroku.com/api/';
 spoton.player_id = null;
 spoton.venue_id = null;
 spoton.venue_name = null;
