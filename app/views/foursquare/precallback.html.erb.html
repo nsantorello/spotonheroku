@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<script type="text/javascript" charset="utf-8">
+		getHash = function(){
+			var hash = document.location.hash;
+			window.location = 'http://www.spotontrivia.com/callback/4sq/' + hash.replace('access_token=','');
+		}
+	</script>
+	<title>Redirecting&hellip;</title>
+</head>
+<body id="foo" onload="getHash()">
+</body>
+</html>
