@@ -71,15 +71,24 @@ a {
 	margin:15px 0 15px 0;
 }
 	
-#answers ol li {
-	background: #FFF;
-	padding: 5px;
-	border: 1px solid #000;
+#answers {
+	float:left;
+	width:375px;
 }
 
-ol {
-	list-style: upper-alpha;
-	list-style-position: inside;
+#answers li {
+	background:#666;
+	margin-bottom:20px;
+	height:65px;
+	background:url(img/answer_bg.png) repeat-x;
+	border-radius: 50px;
+	border:2px solid #ddedf3;
+	line-height:65px;
+	text-align:center;
+	color:#fff;
+	font-weight:bold;
+	font-size:30px;
+	overflow:hidden;
 }
 
 iframe {

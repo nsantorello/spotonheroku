@@ -5,12 +5,12 @@ a, a:visited {
 
 #header{
 	height:90px;
-	background:url(img/header_logo.jpg) center no-repeat #fbeec2;
+	background:url(/images/header_logo.jpg) center no-repeat #fbeec2;
 }
 
-#search_venues {
+#search_venues, #question_header {
 	height:60px;
-	background:url(img/chrome_top.png) repeat-x;	
+	background:url(/images/chrome_top.png) repeat-x;	
 	padding:11px 0 0 0;
 }
 
@@ -39,7 +39,7 @@ a, a:visited {
 #search_btn {
 	height:50px;
 	width:150px;
-	background:url(img/btn_search_bg.png) repeat-x;	
+	background:url(/images/btn_search_bg.png) repeat-x;	
 	color:#fff;
 	font-size:32px;
 	font-weight:bold;
@@ -73,12 +73,13 @@ a, a:visited {
 }
 
 #stats {
-	background:url(img/shadow_btm.png) repeat-x #e0ddd7;
+	background:url(/images/shadow_btm.png) repeat-x #e0ddd7;
 	position:absolute;
 	/*top:650px;*/
-	top:350px;
+	top:655px;
 	left:0;
 	width:100%;
+	z-index:100;
 	height:500px;
 }
 
@@ -117,6 +118,7 @@ a, a:visited {
 	color:#b94803;
 }
 
+
 .split {
 	width:100%;
 	height:1px;
@@ -136,7 +138,7 @@ a, a:visited {
 	height:95px;
 	margin-right:20px;
 	float:left;
-	background:url(img/bubble.png) no-repeat center center;
+	background:url(/images/bubble.png) no-repeat center center;
 }
 
 #points {
@@ -156,7 +158,7 @@ a, a:visited {
 }
 
 #score_box {
-	width:350px;
+	width:340px;
 	float:left;
 	margin:10px 0 0 20px;
 	padding-top:10px;
@@ -173,8 +175,8 @@ a, a:visited {
 
 #top_scores {
 	background:#fff;
-	height:275px;
-	width:360px;
+	height:200px;
+	width:380px;
 	padding:10px 0 0 15px;
 }
 
@@ -182,7 +184,7 @@ a, a:visited {
 	color:#65be59;
 	font-size:18px;
 	float:left;
-	width:170px;
+	width:165px;
 	margin-right:5px;
 	font-weight:bold;
 	margin-top:12px;
@@ -198,11 +200,12 @@ a, a:visited {
 }
 
 #players_box {
-	width:350px;
+	width:340px;
 	float:left;
 	margin:20px 0 0 20px;
 	height:120px;
 	padding-top:10px;
+	overflow:hidden;
 }
 
 #num_players {
@@ -261,4 +264,89 @@ a, a:visited {
 	width:20%;
 	background:#65be59;
 	height:5px;
+}
+
+#backdrop {
+	background:url(/images/bg_sxsw.gif) repeat-x center;
+	width:100%;
+	height:480px;
+	position:absolute;
+	top:190px;
+	z-index:1;
+}
+
+#question_text {
+	width:540px;
+	height:210px;
+	background:url(/images/talk_box.png) no-repeat;
+	font-size:26px;
+	font-style:italic;
+	padding:20px 50px 0 70px;
+	line-height:35px;
+	margin-top:10px;
+}
+
+#spot_box {
+	float:left;
+	width:230px;
+	min-height:350px;
+}
+
+#question {
+	position:relative;
+	z-index:5;
+}
+
+#progress-bar {
+	width:595px;
+	height:20px;
+	background:url(/images/bar_bg.gif);
+	border:1px solid #fef7d1;
+	border-radius:5px;
+	margin:10px 0 0 20px;
+}
+
+#category {
+	font-size:16px;
+	font-weight:bold;
+	color:#fff;
+	margin-left:20px;
+}
+
+#progress-indicator {
+	width:20%;
+	height:100%;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	background:#65be59;
+}
+
+#result {
+	position:relative;
+	z-index:5;
+	text-align:center;
+	padding-top:20px;
+	color:#0f0f0f;
+	font-size:32px;
+}
+
+#result p {
+	margin-top:10px;
+}
+
+#prize {
+	font-weight:bold;
+}
+#next_round {
+	height:65px;
+	width:150px;
+	background:url(/images/answer_bg.png) repeat-x;	
+	color:#fff;
+	font-size:32px;
+	font-weight:bold;
+	border:solid 2px #ddedf3;
+	line-height:50px;
+	padding:0;
+	margin:0;
+	border-radius: 10px;
 }
