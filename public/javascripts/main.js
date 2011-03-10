@@ -154,7 +154,7 @@ spoton.show_question = function(){
 						setTimeout('spoton.show_question();',2000);
 					}
 				});
-				$('#answers > ol').append(a);
+				$('#answers > div > ol').append(a);
 			});
 		} else {
 			$('#progress-indicator').css('width','100%');
