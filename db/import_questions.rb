@@ -10,7 +10,7 @@ while (line = file.gets)
 	# Create responses
 	puts line
 	tokens = line.split(delim)
-	choices = tokens[1..4].map do |r|
+	choices = tokens[1..4].sample(4).map do |r|
 		QuestionResponse.create(:text => r)
 	end
 	
