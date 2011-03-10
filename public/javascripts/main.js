@@ -75,7 +75,7 @@ spoton.show_venues = function(venues){
 			spoton.venue_name = value.name;
 			spoton.request_session(spoton.venue_id);
 		});
-		$('#venues > ul').append(v);
+		$('#venues_view > ul').append(v);
 	})
 }
 
