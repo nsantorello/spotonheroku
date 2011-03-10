@@ -1,38 +1,38 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
-#   Mayor.create(:name => 'Daley', :city => cities.first)
+file = File.new("db/questions.csv", "r")
+delim = "|"
+
+QuestionResponse.delete_all
+Question.delete_all
+
+responses = []
+
+while (line = file.gets)
+	# Create responses
+	puts line
+	tokens = line.split(delim)
+	choices = tokens[1..4].map do |r|
+		QuestionResponse.create(:text => r)
+	end
+	
+	question = Question.create(:text => tokens[0], :answer_id => choices[0].id, :tag => tokens[5])
+	
+	choices.each do |c|
+		c.question_id = question.id
+		c.save
+	end
+end
+
+file.close
+
+file = File.new("db/category_relations.csv", "r")
+
+delim = "|"
 
 CategoryRelation.delete_all
-CategoryRelation.create(:our_tag => "Games", :fsq_tag => "Arcades")
-CategoryRelation.create(:our_tag => "Games", :fsq_tag => "Bowling Alleys")
-CategoryRelation.create(:our_tag => "Games", :fsq_tag => "Casinos")
-CategoryRelation.create(:our_tag => "Games", :fsq_tag => "Gaming Cafes")
-CategoryRelation.create(:our_tag => "TV & Film", :fsq_tag => "Movie Theaters")
-CategoryRelation.create(:our_tag => "History", :fsq_tag => "History Museums")
-CategoryRelation.create(:our_tag => "Science", :fsq_tag => "Planetariums")
-CategoryRelation.create(:our_tag => "Science", :fsq_tag => "Science Museums")
-CategoryRelation.create(:our_tag => "Music", :fsq_tag => "Music Venues")
-CategoryRelation.create(:our_tag => "Games", :fsq_tag => "Pool Halls")
-CategoryRelation.create(:our_tag => "Sport", :fsq_tag => "Stadiums")
-CategoryRelation.create(:our_tag => "Food & Drink", :fsq_tag => "Food")
-CategoryRelation.create(:our_tag => "Sport", :fsq_tag => "Baseball Fields")
-CategoryRelation.create(:our_tag => "Sport", :fsq_tag => "Basketball Courts")
-CategoryRelation.create(:our_tag => "Sport", :fsq_tag => "Golf Courses")
-CategoryRelation.create(:our_tag => "Sport", :fsq_tag => "Ski Areas")
-CategoryRelation.create(:our_tag => "Sport", :fsq_tag => "Soccer Fields")
-CategoryRelation.create(:our_tag => "Tech", :fsq_tag => "Convention Centers")
-CategoryRelation.create(:our_tag => "Music", :fsq_tag => "Music Venues")
-CategoryRelation.create(:our_tag => "Literature", :fsq_tag => "Bookstores")
-CategoryRelation.create(:our_tag => "Food & Drink", :fsq_tag => "Food and Drink Shops")
 
-load 'db/import_questions.rb'
+while (line = file.gets)
+	tokens = line.split(delim)
+	CategoryRelation.create(:fsq_tag => tokens[1], :our_tag => tokens[0])
+end
 
-#VenueQuestionRelation.delete_all
-#VenueQuestionRelation.create(:venue_id => v1.id, :question_id => q1.id)
-#VenueQuestionRelation.create(:venue_id => v1.id, :question_id => q2.id)
-#VenueQuestionRelation.create(:venue_id => v1.id, :question_id => q3.id)
-#VenueQuestionRelation.create(:venue_id => v2.id, :question_id => q1.id)
+file.close
