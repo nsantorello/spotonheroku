@@ -54,10 +54,10 @@ spoton.get_venues = function(){
 	$('#location').append('Looking for nearby venues.');
 
 	//real-geo
-	// spoton.get_geo(return_results);
+	 spoton.get_geo(return_results);
 	
 	//fake-geo
-	return_results({lat:30.25,lon:-97.75,player_id:spoton.player_id});
+	//return_results({lat:30.25,lon:-97.75,player_id:spoton.player_id});
 
 }
 
