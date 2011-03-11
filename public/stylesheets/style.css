@@ -76,7 +76,7 @@ a {
 	width:375px;
 }
 
-#answers > > li {
+#answers li {
 	background:#666;
 	margin-bottom:20px;
 	height:65px;
@@ -90,15 +90,6 @@ a {
 	font-size:30px;
 	overflow:hidden;
 }
-
-#answers > > li .correct {
-	background:url(/images/answer_bg_t.png) repeat-x;
-}
-#answers > > li .incorrect {
-	background:url(/images/answer_bg_f.png) repeat-x;
-}
-
-
 
 iframe {
 	position:absolute;
