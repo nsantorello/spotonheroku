@@ -67,6 +67,10 @@ spoton.show_venues = function(venues){
 	jQuery.each(venues, function(index,value){
 		// console.warn(JSON.stringify(value));
 		var v = document.createElement('li');
+		if(value.name.length > 30){
+			$(v).css('font-size','24px');
+		}
+		
 		console.warn('value',value);
 		var dist = ' <span class=\'distance\'>' + String(value.distance) + 'm</span>';
 		$(v).append(value.name + dist)
