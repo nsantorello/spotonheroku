@@ -132,6 +132,7 @@ spoton.update_stats = function(){
 spoton.show_question = function(){
 	if(spoton.questions != null){
 		spoton.update_stats();
+		$('#stats').removeClass('hidden');
 		if(spoton.questions_prog < spoton.questions.length){
 			$('#question_venue').text = spoton.venue_name;
 			$('#question_category').empty();
