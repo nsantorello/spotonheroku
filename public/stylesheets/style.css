@@ -92,12 +92,10 @@ a {
 }
 
 #answers > > li .correct {
-	background-image:none;
-	background:#65BE59;
+	background:url(/images/answer_bg_t.png) repeat-x;
 }
 #answers > > li .incorrect {
-	background-image:none;
-	background:#DDD;
+	background:url(/images/answer_bg_f.png) repeat-x;
 }
 
 
