@@ -133,6 +133,7 @@ spoton.show_question = function(){
 			$('#question_text').text(value.text)
 				.attr('question_id',value.id)
 				.attr('answer_id', value.answer_id)
+			
 			$('#question_venue').text(spoton.venue_name);
 
 			var shuffle = function shuffle(array) {
@@ -152,6 +153,11 @@ spoton.show_question = function(){
 				var a = document.createElement('li');
 				$(a).attr('answer_id', v.id)
 					.text(v.text);
+					
+				if(v.text.length > 20){
+					$(a).css('font-size','16px');
+				}
+				
 				$(a).bind('click', function() {
 					spoton.answers.push(v.id);
 					if(v.id == $('#question_text').attr('answer_id')){
