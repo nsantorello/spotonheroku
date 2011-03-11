@@ -76,11 +76,11 @@ a {
 	width:375px;
 }
 
-#answers li {
+#answers > > li {
 	background:#666;
 	margin-bottom:20px;
 	height:65px;
-	background:url(img/answer_bg.png) repeat-x;
+	background:url(/images/answer_bg.png) repeat-x;
 	border-radius: 50px;
 	border:2px solid #ddedf3;
 	line-height:65px;
@@ -90,6 +90,17 @@ a {
 	font-size:30px;
 	overflow:hidden;
 }
+
+#answers > > li .correct {
+	background-image:none;
+	background:#65BE59;
+}
+#answers > > li .incorrect {
+	background-image:none;
+	background:#DDD;
+}
+
+
 
 iframe {
 	position:absolute;
