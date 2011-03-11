@@ -52,7 +52,8 @@ spoton.get_venues = function(){
 		}
 		jQuery.ajax(venue_query);
 	}
-	$('#location').append('Looking for nearby venues.');
+	$('#venues').css('background','url(/images/loading.gif)').css('background-position','top center').css('background-repeat','no-repeat');
+	// $('#location').append('Looking for nearby venues.');
 
 	//real-geo
 	 spoton.get_geo(return_results);
@@ -63,6 +64,7 @@ spoton.get_venues = function(){
 }
 
 spoton.show_venues = function(venues){
+	$('#venues').css('background','');
 	$('#venues > ul').empty();
 	jQuery.each(venues, function(index,value){
 		// console.warn(JSON.stringify(value));
@@ -72,7 +74,6 @@ spoton.show_venues = function(venues){
 			if(value.name.length > 45){
 				$(v).css('font-size','24px');
 			}
-			
 		}
 		
 		console.warn('value',value);
@@ -197,10 +198,10 @@ spoton.show_question = function(){
 				$('ol').append(a);
 			});
 		} else {
-			$('#progress-indicator').css('width','100%');
+			$('#progress-indicator').css('width','100%').css('background','url(/images/bar_bg_end.gif)');
 			spoton.submit_answers(spoton.player_id,spoton.session_id,spoton.answers,spoton.show_stats);
 			spoton.answers = [];
-			alert('Answers Submitted!' + String(spoton.number_correct/spoton.number_played*100) + '% Correct!');
+			// alert('Answers Submitted!' + String(spoton.number_correct/spoton.number_played*100) + '% Correct!');
 		}
 	} else {
 		alert('no questions')
@@ -228,6 +229,7 @@ spoton.show_stats = function(stats){
 	spoton.log(stats);
 	$('#questions').addClass('hidden');
 	$('#end').removeClass('hidden');
+	
 }
 
 
