@@ -140,7 +140,7 @@ spoton.show_question = function(){
 					spoton.answers.push(v.id);
 					if(v.id == $('#question_text').attr('answer_id')){
 						// alert('Correct! User clicked on "' + v.id + '"');
-						$(a).addClass('correct');
+						$(a).css('background-image','none').css('background','#65BE59');
 						spoton.questions_prog = spoton.questions_prog + 1;
 						spoton.number_correct = spoton.number_correct + 1;
 						spoton.number_played = spoton.number_played + 1;
@@ -148,7 +148,7 @@ spoton.show_question = function(){
 						setTimeout('spoton.show_question();',2000);
 					} else {
 						// alert('Incorrect! User clicked on "' + v.id + '"');
-						$(a).addClass('incorrect');
+						$(a).css('background-image','none').css('background','#444');
 						spoton.questions_prog = spoton.questions_prog + 1;
 						spoton.number_played = spoton.number_played + 1;
 						setTimeout('spoton.show_question();',2000);
