@@ -3,6 +3,7 @@ spoton.baseurl = 'http://spoton.heroku.com/api/';
 spoton.player_id = null;
 spoton.venue_id = null;
 spoton.venue_name = null;
+spoton.venue_type = null;
 spoton.questions = null;
 spoton.session_id = null;
 spoton.answers = [];
@@ -73,15 +74,16 @@ spoton.show_venues = function(venues){
 		.bind('click', function() {
 			spoton.venue_id = value.id;
 			spoton.venue_name = value.name;
-			spoton.request_session(spoton.venue_id);
+			spoton.venue_type = value.description;
+			spoton.request_session(spoton.venue_id,spoton.player_id);
 		});
 		$('#venues_view > ul').append(v);
 	})
 }
 
-spoton.request_session = function(venue_id){
+spoton.request_session = function(venue_id,player_id){
 	var url = spoton.baseurl + 'play/request';
-	var data = {venue_id:venue_id};
+	var data = {venue_id:venue_id,player_id:player_id};
 	var session_query = {
 		url:url,
 		data:data,
@@ -115,7 +117,9 @@ spoton.get_questions = function(session_id){
 spoton.show_question = function(){
 	if(spoton.questions != null){
 		if(spoton.questions_prog < spoton.questions.length){
-			$('#location').text = spoton.venue_name;
+			$('#question_venue').text = spoton.venue_name;
+			$('#question_category').empty();
+			$('#question_category').append(spoton.venue_type);
 			$('ol').empty();
 			$('#venues').addClass('hidden');
 			$('#questions').removeClass('hidden');
@@ -129,6 +133,7 @@ spoton.show_question = function(){
 			$('#question_text').text(value.text)
 				.attr('question_id',value.id)
 				.attr('answer_id', value.answer_id)
+			
 			$('#question_venue').text(spoton.venue_name);
 
 			var shuffle = function shuffle(array) {
@@ -148,6 +153,11 @@ spoton.show_question = function(){
 				var a = document.createElement('li');
 				$(a).attr('answer_id', v.id)
 					.text(v.text);
+					
+				if(v.text.length > 20){
+					$(a).css('font-size','16px');
+				}
+				
 				$(a).bind('click', function() {
 					spoton.answers.push(v.id);
 					if(v.id == $('#question_text').attr('answer_id')){
