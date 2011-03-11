@@ -197,7 +197,7 @@ spoton.show_question = function(){
 			});
 		} else {
 			$('#progress-indicator').css('width','100%');
-			spoton.submit_answers(spoton.player_id,spoton.session_id,spoton.answers,spoton.log);
+			spoton.submit_answers(spoton.player_id,spoton.session_id,spoton.answers,spoton.show_stats);
 			spoton.answers = [];
 			alert('Answers Submitted!' + String(spoton.number_correct/spoton.number_played*100) + '% Correct!');
 		}
@@ -208,7 +208,7 @@ spoton.show_question = function(){
 spoton.submit_answers = function(player_id,session_id,answers,callback){
 	var url = spoton.baseurl + 'play/submit';
 	answers = answers.join(',');
-	var data = {player_id:player_id,session_id:session_id,answers:answers,}
+	var data = {player_id:player_id,session_id:session_id,answers:answers}
 	var submit_answers_query = {
 		url:url,
 		data:data,
@@ -220,6 +220,13 @@ spoton.submit_answers = function(player_id,session_id,answers,callback){
 	spoton.log('Submitting answers.');
 	jQuery.ajax(submit_answers_query);
 	
+}
+
+spoton.show_stats = function(stats){
+	//show #stats
+	spoton.log(stats);
+	$('#questions').addClass('hidden');
+	$('#end').removeClass('hidden');
 }
 
 
