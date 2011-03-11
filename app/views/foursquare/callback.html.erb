@@ -33,33 +33,31 @@
 		</div>
 		<div id="question">
 			<div class="centered_box">
-				<div id="question_text"></div>
-				<div id="spot_box"><img src="/images/spot.png" /></div>
-				<div id="answers">
-					<ol></ol>
+				<div id="q">
+					<div id="question_text"></div>
+					<div id="spot_box"><img src="/images/spot.png" /></div>
+					<div id="answers">
+						<ol></ol>
+					</div>
+				</div>
+				<div id="result" class="hidden">
+					<div class="centered_box treat_earned hidden">
+						<img src="/images/text_awesome.png"/><br/>
+						<img src="/images/treats/biscuit.png"/><br/>
+						<p>You’ve earned a <span id="prize">Biscuit.</span> <input type="button" id="next_round" value="NEXT"/></p>
+					</div>
+					<div class="centered_box treat_not_earned hidden">
+						<img src="/images/treats/biscuit.png"/><br/>
+						<p>You’ve earned a <span id="prize">Biscuit.</span> <input type="button" id="next_round" value="NEXT"/></p>
+					</div>
 				</div>
 			</div>
+
+
+
 			
 		</div>
 	</div>
-	<div id="end" class="hidden">
-		<div id="backdrop" style="top:70px;"></div>
-		<div id="question_header">
-			<div class="centered_box" style="position:relative; z-index:5;">
-				<div id="category"><span id="question_venue">Yankee Stadium</span>: <span id="question_category">Sport Legends</span></div>
-				<div id="progress-bar" style="background:url(/images/bar_bg_end.gif);"><div id="progress-indicator" style="width:0;"></div></div>
-			</div>
-		</div>
-		<div id="result">
-			<div class="centered_box">
-				<img src="/images/text_awesome.png"/><br/>
-				<img src="/images/treats/biscuit.png"/><br/>
-				<p>You’ve earned a <span id="prize">Biscuit.</span> <input type="button" id="next_round" value="NEXT"/></p>
-			</div>
-		</div>
-
-	</div>
-
 	<div id="stats" class="hidden">
 		<div class="centered_box">
 			<div id="profile_box">
