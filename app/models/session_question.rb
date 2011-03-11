@@ -4,7 +4,7 @@ class SessionQuestion < ActiveRecord::Base
 	belongs_to :question
 	
 	def SessionQuestion.generate_for_session(session, how_many = 10)
-		questions = Question.all.sample(how_many)
+		questions = session.venue.questions
 		questions.each do |q|
 			SessionQuestion.create(:session_id => session.id, :question_id => q.id)
 		end
