@@ -11,7 +11,7 @@ class VenuesController < ApplicationController
   		nearby_venues = []
   		
   		call["response"]["groups"].each do |c|
-			d["items"].each { |v|
+			c["items"].each { |v|
 				if !(near_venue = Venue.where(:foursquare_id => v["id"]).first)
 					near_venue = Venue.new
 					near_venue.name = v["name"]
