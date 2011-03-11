@@ -67,6 +67,14 @@ spoton.show_venues = function(venues){
 	jQuery.each(venues, function(index,value){
 		// console.warn(JSON.stringify(value));
 		var v = document.createElement('li');
+		if(value.name.length > 30){
+			$(v).css('font-size','30px');
+			if(value.name.length > 45){
+				$(v).css('font-size','24px');
+			}
+			
+		}
+		
 		console.warn('value',value);
 		var dist = ' <span class=\'distance\'>' + String(value.distance) + 'm</span>';
 		$(v).append(value.name + dist)
@@ -114,8 +122,16 @@ spoton.get_questions = function(session_id){
 	jQuery.ajax(question_query);
 }
 
+spoton.update_stats = function(){
+	$('#curr_points').empty();
+	$('#curr_points').append(String(spoton.number_correct) + '/' + String(spoton.number_played));
+	// spoton.number_played
+	// spoton.number_correct
+}
+
 spoton.show_question = function(){
 	if(spoton.questions != null){
+		spoton.update_stats();
 		if(spoton.questions_prog < spoton.questions.length){
 			$('#question_venue').text = spoton.venue_name;
 			$('#question_category').empty();
