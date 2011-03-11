@@ -131,7 +131,6 @@ spoton.update_stats = function(){
 
 spoton.show_question = function(){
 	if(spoton.questions != null){
-		$('#profile_box img').attr('src',spoton.photo);
 		spoton.update_stats();
 		if(spoton.questions_prog < spoton.questions.length){
 			$('#question_venue').text = spoton.venue_name;
