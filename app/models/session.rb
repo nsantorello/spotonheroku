@@ -11,7 +11,7 @@ class Session < ActiveRecord::Base
 		# Create time windows.
 		now = Time.new
 		start_time = now + 0.seconds
-		end_time = start_time + 112.minutes + 30.seconds
+		end_time = start_time + 30.seconds
 		# Create the new session.
 		session = Session.create(:start_time => start_time, :end_time => end_time, :venue_id => venue.id)
 		# Generate random questions for this session.
@@ -29,7 +29,7 @@ class Session < ActiveRecord::Base
 	end
 	
 	def time_valid_questions
-		session_questions if valid_right_now
+		session_questions# if valid_right_now
 	end
 
 end

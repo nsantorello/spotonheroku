@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110310181251) do
+ActiveRecord::Schema.define(:version => 20110311163011) do
 
   create_table "category_relations", :force => true do |t|
     t.string   "our_tag"
@@ -57,6 +57,13 @@ ActiveRecord::Schema.define(:version => 20110310181251) do
     t.integer  "venue_id"
     t.integer  "score",      :default => 0
     t.date     "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "session_players", :force => true do |t|
+    t.integer  "player_id"
+    t.integer  "session_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
