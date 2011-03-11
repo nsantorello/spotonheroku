@@ -161,6 +161,7 @@ spoton.show_question = function(){
 					} else {
 						// alert('Incorrect! User clicked on "' + v.id + '"');
 						$(a).css('background-image','none').css('background','#444');
+						$('#answers ol li[answer_id=' + value.answer_id +']').css('background','#65BE59');
 						spoton.questions_prog = spoton.questions_prog + 1;
 						spoton.number_played = spoton.number_played + 1;
 						setTimeout('spoton.show_question();',2000);
