@@ -18,13 +18,15 @@ class FoursquareController < ApplicationController
     	user_url = "https://api.foursquare.com/v2/users/self?oauth_token=#{access_token}"
     	puts user_url
     	user = JSON.parse(`curl '#{user_url}'`)["response"]["user"]
-	  		  	
+    	puts user if user
+	  	
 	  	if !(@player = Player.where(:email => user["contact"]["email"]).first)
 			@player = Player.new
 			@player.first_name = user["firstName"]
 			@player.last_name = user["lastName"]
 			@player.photo = user["photo"]
 			@player.email = user["contact"]["email"]
+			@player.treats = 0
 		end
 		
 		@player.foursquare_access_token = access_token

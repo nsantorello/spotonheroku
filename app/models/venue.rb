@@ -19,7 +19,7 @@ class Venue < ActiveRecord::Base
 	
 	def leaderboard
 		unique_sessions = ScoreHistory.where(:venue_id => id).uniq{|sh|sh.player.id}.sort {|a,b|b.player.score_at_venue(self) <=> a.player.score_at_venue(self)}
-		scores = unique_sessions.map { |s| { :name => s.player.name, :score => s.player.score_at_venue(self) } }
+		scores = unique_sessions.map { |s| { :name => s.player.name, :score => s.player.score_at_venue(self), :photo => s.player.photo, :treats => s.player.treats } }
 	end
 	
 	
