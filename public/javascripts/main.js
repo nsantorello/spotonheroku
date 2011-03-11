@@ -96,7 +96,6 @@ spoton.request_session = function(venue_id){
 	
 }
 
-
 spoton.get_questions = function(session_id){
 	var url = spoton.baseurl + 'play/questions';
 	var data = {session_id:session_id};
@@ -105,6 +104,17 @@ spoton.get_questions = function(session_id){
 		data:data,
 		dataType:'json',
 		success:function(result){
+			var shuffle = function shuffle(array) {
+				var tmp, current, top = array.length;
+				if(top) while(--top) {
+					current = Math.floor(Math.random() * (top + 1));
+					tmp = array[current];
+					array[current] = array[top];
+					array[top] = tmp;
+				}
+				return array;
+			}
+			shuffle(result)
 			spoton.questions = result;
 			spoton.show_question();
 		}
