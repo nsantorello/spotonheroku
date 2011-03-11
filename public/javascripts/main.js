@@ -117,7 +117,7 @@ spoton.show_question = function(){
 	if(spoton.questions != null){
 		if(spoton.questions_prog < spoton.questions.length){
 			$('#location').text = spoton.venue_name;
-			$('#answers > ol').empty();
+			$('ol').empty();
 			$('#venues').addClass('hidden');
 			$('#questions').removeClass('hidden');
 			
@@ -154,7 +154,7 @@ spoton.show_question = function(){
 						setTimeout('spoton.show_question();',2000);
 					}
 				});
-				$('#answers > div > ol').append(a);
+				$('ol').append(a);
 			});
 		} else {
 			$('#progress-indicator').css('width','100%');
