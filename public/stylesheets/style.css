@@ -92,9 +92,11 @@ a {
 }
 
 #answers > > li .correct {
+	background-image:none;
 	background:#65BE59;
 }
 #answers > > li .incorrect {
+	background-image:none;
 	background:#DDD;
 }
 
