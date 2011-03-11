@@ -12,9 +12,15 @@ class Player < ActiveRecord::Base
 		if (questions.count == answers.count && !RoundScore.where(:player_id => id, :session_id => session.id).first)
 			round_score = (0..answers.count-1).to_a.map{|i| (questions[i].question.answer_id == answers[i].to_i && 1) || 0}.inject(0){|acc,sc|acc+=sc}
 			# Create a score for the round.
+			if round_score >= 5
+				self.treats += 1
+				self.save
+			end
 			RoundScore.add_score(self, session, round_score)
 			ScoreHistory.get_today_or_create(self, session.venue).add_score(round_score)
 		end
+		
+		round_score >= 5
 	end
 	
 	def name

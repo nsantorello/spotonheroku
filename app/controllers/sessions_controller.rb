@@ -22,9 +22,9 @@ class SessionsController < ApplicationController
 		session = Session.find(params[:session_id])
 		answers = eval('[' + params[:answers] + ']')
 		# Save player's score.
-		player.score(session, answers)
+		treat_earned = player.score(session, answers)
 		
-		render :json => Venue.find(session.venue_id).leaderboard
+		render :json => {:treat_earned => treat_earned, :num_treats => player.treats, :leaderboard => Venue.find(session.venue_id).leaderboard
 	end
 	
 	def play_results
