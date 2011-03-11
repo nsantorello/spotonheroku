@@ -26,6 +26,7 @@ class FoursquareController < ApplicationController
 			@player.last_name = user["lastName"]
 			@player.photo = user["photo"]
 			@player.email = user["contact"]["email"]
+			@player.treats = 0
 		end
 		
 		@player.foursquare_access_token = access_token
