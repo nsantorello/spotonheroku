@@ -104,17 +104,6 @@ spoton.get_questions = function(session_id){
 		data:data,
 		dataType:'json',
 		success:function(result){
-			var shuffle = function shuffle(array) {
-				var tmp, current, top = array.length;
-				if(top) while(--top) {
-					current = Math.floor(Math.random() * (top + 1));
-					tmp = array[current];
-					array[current] = array[top];
-					array[top] = tmp;
-				}
-				return array;
-			}
-			shuffle(result)
 			spoton.questions = result;
 			spoton.show_question();
 		}
@@ -141,6 +130,19 @@ spoton.show_question = function(){
 				.attr('question_id',value.id)
 				.attr('answer_id', value.answer_id)
 			$('#question_venue').text(spoton.venue_name);
+
+			var shuffle = function shuffle(array) {
+				var tmp, current, top = array.length;
+				if(top) while(--top) {
+					current = Math.floor(Math.random() * (top + 1));
+					tmp = array[current];
+					array[current] = array[top];
+					array[top] = tmp;
+				}
+				return array;
+			}
+
+			shuffle(value.responses);
 
 			jQuery.each(value.responses, function(i,v){
 				var a = document.createElement('li');
