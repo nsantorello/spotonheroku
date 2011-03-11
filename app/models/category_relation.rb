@@ -6,6 +6,7 @@ class CategoryRelation < ActiveRecord::Base
 			"General"
 		else
 			our_topic
+		end
 	end
 
 end
