@@ -22,16 +22,16 @@ class Venue < ActiveRecord::Base
 		scores = unique_sessions.map { |s| { :name => s.player.name, :score => s.player.score_at_venue(self) } }
 	end
 	
+	
 	def questions
 		# Our category
 		# description == 4sq category
-		our_topic = CategoryRelation.where( :fsq_tag => description ).first
 		
-		if !our_topic || !our_topic.our_tag || our_topic.our_tag == ""
+		if description == "General"
 			# Select from all questions.
 			Question.all.sample(10)
 		else
-			Question.where(:tag => our_topic).sample(10)
+			Question.where(:tag => description).sample(10)
 		end
 	end
 
