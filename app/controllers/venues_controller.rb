@@ -10,19 +10,21 @@ class VenuesController < ApplicationController
   		
   		nearby_venues = []
   		
-  		call["response"]["groups"][0]["items"].each { |v|
-  			if !(near_venue = Venue.where(:foursquare_id => v["id"]).first)
-  				near_venue = Venue.new
-  				near_venue.name = v["name"]
-  				near_venue.description = v["categories"] && v["categories"][0] && v["categories"][0]["name"]
-  				near_venue.foursquare_id = v["id"]
-  				near_venue.save
-  			end
-  			
-  			hash = {:name=>near_venue.name, :description=>near_venue.description, :id => near_venue.id, :distance=>v["location"]["distance"].to_i}
-  			
-  			nearby_venues << hash
-  		}
+  		call["response"]["groups"].each do |c|
+			d["items"].each { |v|
+				if !(near_venue = Venue.where(:foursquare_id => v["id"]).first)
+					near_venue = Venue.new
+					near_venue.name = v["name"]
+					near_venue.description = v["categories"] && v["categories"][0] && v["categories"][0]["name"]
+					near_venue.foursquare_id = v["id"]
+					near_venue.save
+				end
+				
+				hash = {:name=>near_venue.name, :description=>near_venue.description, :id => near_venue.id, :distance=>v["location"]["distance"].to_i}
+				
+				nearby_venues << hash
+			}
+		end
   	
 		render :json => nearby_venues.sort{ |a,b|a[:distance] <=> b[:distance] }
 	end
