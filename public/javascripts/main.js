@@ -122,8 +122,16 @@ spoton.get_questions = function(session_id){
 	jQuery.ajax(question_query);
 }
 
+spoton.update_stats = function(){
+	$('#curr_points').empty();
+	$('#curr_points').append(String(spoton.number_correct) + '/' + String(spoton.number_played));
+	// spoton.number_played
+	// spoton.number_correct
+}
+
 spoton.show_question = function(){
 	if(spoton.questions != null){
+		spoton.update_stats();
 		if(spoton.questions_prog < spoton.questions.length){
 			$('#question_venue').text = spoton.venue_name;
 			$('#question_category').empty();
