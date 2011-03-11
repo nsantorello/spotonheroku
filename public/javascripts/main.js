@@ -69,6 +69,10 @@ spoton.show_venues = function(venues){
 		var v = document.createElement('li');
 		if(value.name.length > 30){
 			$(v).css('font-size','30px');
+			if(value.name.length > 45){
+				$(v).css('font-size','24px');
+			}
+			
 		}
 		
 		console.warn('value',value);
