@@ -31,7 +31,7 @@ class Venue < ActiveRecord::Base
 			# Select from all questions.
 			Question.all.sample(10)
 		else
-			Question.where(:tag => our_tag_category).sample(10)
+			Question.where(:tag => description).sample(10)
 		end
 	end
 
