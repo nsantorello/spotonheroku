@@ -6,7 +6,7 @@ class CategoryRelation < ActiveRecord::Base
 		if  !our_tag || our_tag == ""
 			"General"
 		else
-			our_topic
+			our_tag
 		end
 	end
 
