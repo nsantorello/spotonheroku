@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110311163011) do
+ActiveRecord::Schema.define(:version => 20110311192704) do
 
   create_table "category_relations", :force => true do |t|
     t.string   "our_tag"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20110311163011) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "photo"
+    t.integer  "treats",                  :default => 0
   end
 
   create_table "question_responses", :force => true do |t|

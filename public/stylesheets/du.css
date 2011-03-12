@@ -365,17 +365,16 @@ a, a:visited {
 	margin:0;
 	border-radius: 10px;
 }
-
 #title {
 	width:100%;
 	height:268px;
-	background:url(img/title.jpg) center no-repeat #fbeec2;
+	background:url(/images/title.jpg) center no-repeat #fbeec2;
 }
 
 #start_bar {
 	width:100%;
 	height:122px;
-	background:url(img/shadow_purp.png) repeat-x;
+	background:url(/images/shadow_purp.png) repeat-x;
 	line-height:150px;
 	text-align:center;
 }
@@ -391,13 +390,13 @@ a, a:visited {
 	padding:0;
 	margin:0;
 	border-radius: 25px;
-	background:url(img/start_bg.png) repeat-x;	
+	background:url(/images/start_bg.png) repeat-x;	
 }
 
 #intro {
 	width:100%;
 	height:480px;
-	background:url(img/bg_sxsw.gif) center;
+	background:url(/images/bg_sxsw.gif) center;
 	padding:0;
 }
 
@@ -407,7 +406,7 @@ a, a:visited {
 	font-style:italic;
 	width:325px;
 	height:440px;
-	background:url(img/talk_intro.png) center no-repeat;
+	background:url(/images/talk_intro.png) center no-repeat;
 	float:left;
 	left:-20px;
 	position:relative;

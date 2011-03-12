@@ -53,7 +53,7 @@ spoton.get_venues = function(){
 		jQuery.ajax(venue_query);
 	}
 	$('#venues_header').css('color','#000').empty().append('Loading Venues');
-	$('#venues').css('background','url(/images/loading.gif)').css('background-position','top center').css('background-repeat','no-repeat');
+	$('#venues').css('background','url(/images/loading.gif)').css('background-position','top center').css('background-repeat','no-repeat').css('height', '100%');
 	// $('#location').append('Looking for nearby venues.');
 
 	//real-geo
@@ -195,6 +195,7 @@ spoton.show_question = function(){
 						$('#answers ol li[answer_id=' + value.answer_id +']').css('background','#65BE59');
 						spoton.questions_prog = spoton.questions_prog + 1;
 						spoton.number_played = spoton.number_played + 1;
+						// navigator.notification.vibrate(500);
 						setTimeout('spoton.show_question();',2000);
 					}
 				});
@@ -244,25 +245,6 @@ spoton.show_stats = function(stats){
 spoton.login = function(){
 	$('#home').addClass('hidden');
 	$('#login').removeClass('hidden');
-	// function populateDB(tx) {
-	//      // tx.executeSql('DROP TABLE `spoton`');
-	//      tx.executeSql('CREATE TABLE IF NOT EXISTS `spoton` (id unique, data)');
-	//      tx.executeSql('INSERT INTO spoton (id, data) VALUES (1, "First row")');
-	//      tx.executeSql('INSERT INTO spoton (id, data) VALUES (2, "Second row")');
-	// }
-	// 
-	// function errorCB(err) {
-	// 	console.warn(err);
-	// 	// alert("Error processing SQL: "+err.code);
-	// }
-	// 
-	// function successCB() {
-	// 	alert("success!");
-	// }
-	// 
-	// var db = window.openDatabase("spoton", "1.0", "Spot On Trivia", 1000000);
-	// db.transaction(populateDB, errorCB, successCB);
-
 }
 
 spoton.venues = function(){
@@ -271,40 +253,9 @@ spoton.venues = function(){
 	spoton.get_venues();
 }
 
-// spoton.answer = function(ans){
-// 	var self = this;
-// 	var a = document.createElement('li');
-// 	a.className = 'answer';
-// 	a.id = 'answer_' + ans.answer_id;
-// 	a.addEventListener('click',function(e){alert('Clicked on ' + a.id)});
-// 	$('ul').appendChild(a);
-// }
-
-// spoton.user_check = function()
-// {
-//     db.transaction(function(tx) {
-//         tx.executeSql("SELECT id, data FROM `spoton`", [], function(tx, result) {
-//             for (var i = 0; i < result.rows.length; ++i) {
-//                 var row = result.rows.item(i);
-//                 var note = new Note();
-//                 note.id = row['id'];
-//                 note.text = row['note'];
-//                 note.timestamp = row['timestamp'];
-//                 note.left = row['left'];
-//                 note.top = row['top'];
-//                 note.zIndex = row['zindex'];
-// 
-//                 if (row['id'] > highestId)
-//                     highestId = row['id'];
-//                 if (row['zindex'] > highestZ)
-//                     highestZ = row['zindex'];
-//             }
-// 
-//             if (!result.rows.length)
-//                 newNote();
-//         }, function(tx, error) {
-//             alert('Failed to retrieve notes from database - ' + error.message);
-//             return;
-//         });
-//     });
-// }
+spoton.reset = function(){
+	$('#result > div').addClass('hidden');
+	$('#q').removeClass('hidden');
+	$('#result').addClass('hidden');
+	spoton.request_session(spoton.venue_id,spoton.player_id);
+}
