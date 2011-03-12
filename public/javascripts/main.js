@@ -240,11 +240,11 @@ spoton.show_stats = function(stats){
 	spoton.log(stats);
 	$('#q').addClass('hidden');
 	$('#result').removeClass('hidden');
-	//if(stats.treat_earned){
+	if(stats.treat_earned){
 		$(".treat_earned").removeClass('hidden');
-	//} else {
-	//	$(".treat_not_earned").removeClass('hidden');
-	//}
+	} else {
+		$(".treat_not_earned").removeClass('hidden');
+	}
 	
 	$('#stats').animate({top:'450px'}, 500);
 	
