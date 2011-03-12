@@ -19,8 +19,9 @@ class Player < ActiveRecord::Base
 			RoundScore.add_score(self, session, round_score)
 			ScoreHistory.get_today_or_create(self, session.venue).add_score(round_score)
 			round_score >= 5
+		else
+			false
 		end
-		false
 	end
 	
 	def name
