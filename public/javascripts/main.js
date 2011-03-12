@@ -110,6 +110,8 @@ spoton.request_session = function(venue_id,player_id){
 }
 
 spoton.get_questions = function(session_id){
+	$('#question').addClass('hidden');
+	$('#question > div').addClass('hidden');
 	var url = spoton.baseurl + 'play/questions';
 	var data = {session_id:session_id};
 	var question_query = {
@@ -229,8 +231,13 @@ spoton.submit_answers = function(player_id,session_id,answers,callback){
 spoton.show_stats = function(stats){
 	//show #stats
 	spoton.log(stats);
-	$('#questions').addClass('hidden');
-	$('#end').removeClass('hidden');
+	$('#q').addClass('hidden');
+	$('#result').removeClass('hidden');
+	if(stats.treat_earned){
+		$(".treat_earned").removeClass('hidden');
+	} else {
+		$(".treat_not_earned").removeClass('hidden');
+	}
 	
 }
 
