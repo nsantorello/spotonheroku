@@ -255,7 +255,7 @@ spoton.venues = function(){
 
 spoton.reset = function(){
 	$('#result > div').addClass('hidden');
-	$('#question').addClass('hidden');
+	$('#q').removeClass('hidden');
 	$('#result').addClass('hidden');
 	spoton.request_session(spoton.venue_id,spoton.player_id);
 }
