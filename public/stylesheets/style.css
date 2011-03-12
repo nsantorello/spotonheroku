@@ -81,7 +81,7 @@ a {
 	background:#666;
 	margin-bottom:20px;
 	height:65px;
-	background:url(img/answer_bg.png) repeat-x;
+	background:url(/images/answer_bg.png) repeat-x;
 	border-radius: 50px;
 	border:2px solid #ddedf3;
 	line-height:65px;
