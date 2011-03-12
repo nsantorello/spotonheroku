@@ -52,6 +52,7 @@ spoton.get_venues = function(){
 		}
 		jQuery.ajax(venue_query);
 	}
+	$('#venues_header').css('color','#000');
 	$('#venues').css('background','url(/images/loading.gif)').css('background-position','top center').css('background-repeat','no-repeat');
 	// $('#location').append('Looking for nearby venues.');
 
@@ -65,6 +66,7 @@ spoton.get_venues = function(){
 
 spoton.show_venues = function(venues){
 	$('#venues').css('background','');
+	$('#venues_header').css('color','#DBDBDB');
 	$('#venues > ul').empty();
 	jQuery.each(venues, function(index,value){
 		// console.warn(JSON.stringify(value));
