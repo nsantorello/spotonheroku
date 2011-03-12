@@ -200,6 +200,12 @@ spoton.show_question = function(){
 					}
 				});
 				$('ol').append(a);
+				
+				$('#question_text').animate({width:0, height:0, top:'210px'}, 10, function(){
+					$('#question_text').animate({opacity:1, width:'540px', height:'210px', top:0}, 400);
+					$('#answers').fadeIn(600);
+				});
+
 			});
 		} else {
 			$('#progress-indicator').css('width','100%').css('background','url(/images/bar_bg_end.gif)');
