@@ -10,6 +10,7 @@
 	<script type="text/javascript" charset="utf-8">
 		//token goes here
 		spoton.player_id = <%= @player.id %>;
+		spoton.photo = '<%= @player.photo %>';
 	</script>
 	<link rel="stylesheet" href="/stylesheets/reset.css" type="text/css" media="screen" title="no title" charset="utf-8">
 	<link rel="stylesheet" href="/stylesheets/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
@@ -33,27 +34,38 @@
 		</div>
 		<div id="question">
 			<div class="centered_box">
-				<div id="question_wrapper">
-                	<div id="ready_msg"><img id="ready" src="/images/text_ready.png" /><img id="set" src="/images/text_set.png" /><img id="go" src="/images/text_go.png" /></div>
-					<div id="question_text"></div>
+				<div id="q">
+					<div id="question_wrapper">
+						<div id="ready_msg"><img id="ready" src="/images/text_ready.png" /><img id="set" src="/images/text_set.png" /><img id="go" src="/images/text_go.png" /></div>
+						<div id="question_text"></div>
+					</div>
+					<div id="spot_box"><img src="/images/spot.png" /></div>
+					<div id="answers">
+						<ol></ol>
+					</div>
 				</div>
-				<div id="spot_box"><img src="/images/spot.png" /></div>
-				<div id="answers">
-					<ol></ol>
+				<div id="result" class="hidden">
+					<div class="centered_box treat_earned hidden">
+						<img src="/images/text_awesome.png"/><br/>
+						<img src="/images/treats/biscuit.png"/><br/>
+						<p>You’ve earned a <span id="prize">Biscuit.</span> <input href="javascript:spoton.get_questions(spoton.spoton_session_id);" type="button" id="next_round" value="NEXT"/></p>
+					</div>
+					<div class="centered_box treat_not_earned hidden">
+						<p>Sorry, no <span id="prize">Biscuit.</span> for you! Play again? <input href="javascript:spoton.get_questions(spoton.spoton_session_id);" type="button" id="next_round" value="NEXT"/></p>
+					</div>
 				</div>
 			</div>
+
+
+
 			
 		</div>
 	</div>
-	<div id="end">
-	</div>
-
-	<div id="stats">
+	<div id="stats" class="hidden">
 		<div class="centered_box">
 			<div id="profile_box">
-				<img src="" width="90" height="90" id="profile_pic"/>
-				<div id="curr_points">
-					9999<span id="curr_time">12:23:22.5</span>
+				<img src="<%= @player.photo %>" width="90" height="90" id="profile_pic"/>
+				<div id="curr_points"><span id="curr_time"></span>
 				</div>
 			</div>
 			<div id="players_box">
@@ -62,7 +74,7 @@
 					<div id="p_viewer">
 						<div id="p_container">
 							<div class="opponent_box">
-								<img src="" width="70" height="70" id="player_pic"/>
+								<img width="70" height="70" id="player_pic"/>
 								<div class="player_points">
 									<div class="their_points">34</div>
 									<a>Francisco</a>

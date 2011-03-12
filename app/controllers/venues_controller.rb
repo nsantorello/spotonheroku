@@ -15,7 +15,7 @@ class VenuesController < ApplicationController
 				if !(near_venue = Venue.where(:foursquare_id => v["id"]).first)
 					near_venue = Venue.new
 					near_venue.name = v["name"]
-					near_venue.description = v["categories"] && v["categories"][0] && v["categories"][0]["name"]
+					near_venue.description = CategoryRelation.our_tag_category(v["categories"] && v["categories"][0] && v["categories"][0]["name"])
 					near_venue.foursquare_id = v["id"]
 					near_venue.save
 				end
