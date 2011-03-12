@@ -246,7 +246,7 @@ spoton.show_stats = function(stats){
 	//	$(".treat_not_earned").removeClass('hidden');
 	//}
 	
-	$('#stats').animate({top:'380px'}, 500);
+	$('#stats').animate({top:'450px'}, 500);
 	
 }
 
