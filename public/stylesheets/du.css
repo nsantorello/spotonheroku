@@ -5,12 +5,12 @@ a, a:visited {
 
 #header{
 	height:90px;
-	background:url(img/header_logo.jpg) center no-repeat #fbeec2;
+	background:url(/images/header_logo.jpg) center no-repeat #fbeec2;
 }
 
 #search_venues, #question_header {
 	height:60px;
-	background:url(img/chrome_top.png) repeat-x;	
+	background:url(/images/chrome_top.png) repeat-x;	
 	padding:11px 0 0 0;
 }
 
@@ -39,7 +39,7 @@ a, a:visited {
 #search_btn {
 	height:50px;
 	width:150px;
-	background:url(img/btn_search_bg.png) repeat-x;	
+	background:url(/images/btn_search_bg.png) repeat-x;	
 	color:#fff;
 	font-size:32px;
 	font-weight:bold;
@@ -73,7 +73,7 @@ a, a:visited {
 }
 
 #stats {
-	background:url(img/shadow_btm.png) repeat-x #e0ddd7;
+	background:url(/images/shadow_btm.png) repeat-x #e0ddd7;
 	position:absolute;
 	/*top:650px;*/
 	top:680px;
@@ -142,7 +142,7 @@ a, a:visited {
 	height:95px;
 	margin-right:20px;
 	float:left;
-	background:url(img/bubble.png) no-repeat center center;
+	background:url(/images/bubble.png) no-repeat center center;
 }
 
 #points {
@@ -271,7 +271,7 @@ a, a:visited {
 }
 
 #backdrop {
-	background:url(img/bg_sxsw.gif) repeat-x center;
+	background:url(/images/bg_sxsw.gif) repeat-x center;
 	width:100%;
 	height:640px;
 	position:absolute;
@@ -293,7 +293,7 @@ a, a:visited {
 	top:210px;
 	width:540px;
 	height:210px;
-	background:url(img/talk_box.png) no-repeat;
+	background:url(/images/talk_box.png) no-repeat;
 	font-size:26px;
 	font-style:italic;
 	padding:20px 50px 0 70px;
@@ -315,7 +315,7 @@ a, a:visited {
 #progress-bar {
 	width:595px;
 	height:20px;
-	background:url(img/bar_bg.gif);
+	background:url(/images/bar_bg.gif);
 	border:1px solid #fef7d1;
 	border-radius:5px;
 	margin:10px 0 0 20px;
@@ -355,7 +355,7 @@ a, a:visited {
 #next_round {
 	height:65px;
 	width:150px;
-	background:url(img/answer_bg.png) repeat-x;	
+	background:url(/images/answer_bg.png) repeat-x;	
 	color:#fff;
 	font-size:32px;
 	font-weight:bold;
