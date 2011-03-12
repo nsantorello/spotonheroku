@@ -10,6 +10,7 @@ Checkintrivia::Application.routes.draw do
   match '/callback/4sq' => 'foursquare#precallback'
   match '/callback/4sq/:access_token' => 'foursquare#callback'
   match '/m' => 'mobile#index'
+  match '/m/game' => 'mobile#game'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
