@@ -111,7 +111,6 @@ spoton.request_session = function(venue_id,player_id){
 
 spoton.get_questions = function(session_id){
 	$('#question').addClass('hidden');
-	$('#question > div').addClass('hidden');
 	var url = spoton.baseurl + 'play/questions';
 	var data = {session_id:session_id};
 	var question_query = {
