@@ -1,20 +1,29 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width; user-scalable=no" />
+	<meta name="viewport" content="width=480, user-scalable=no, initial-scale=0.5, minimum-scale=0.5, maximum-scale=0.5"/> 
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <title>SpotOn Trivia</title>
 	<script type="text/javascript" charset="utf-8" src="/javascripts/jquery-1.5.1.min.js"></script>
-	<script type="text/javascript" charset="utf-8" src="/javascripts/main.js"></script>
-	<script type="text/javascript" charset="utf-8">
-		//token goes here
-		spoton.player_id = 1;
-	</script>
 	<link rel="stylesheet" href="/stylesheets/reset.css" type="text/css" media="screen" title="no title" charset="utf-8">
 	<link rel="stylesheet" href="/stylesheets/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
-	<link rel="stylesheet" href="/stylesheets/du.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="/stylesheets/du.css" type="text/css" media="screen" title="no title" charset="utf-8">
   </head>
-  <body id="stage">
-	<div id="home"><a class="foursquare" href="https://foursquare.com/oauth2/authenticate?client_id=HJUKWCU1S4T3VZ2GPZSTRAMNFE4IKLOHW1YZLMMV354LVES2&response_type=token&redirect_uri=http://spoton.heroku.com/callback/4sq/&display=touch">Log in via Foursquare</a></div>
+  <body id="stage">		
+  	<div id="title"></div>
+    <div id="start_bar">
+    	<div class="centered_box">
+        	<input type="button" id="start_btn" value="START"/ onClick="javascript:window.location.href = 'game.html'">
+        </div>
+    </div>
+   	<div id="intro">
+    	<div class="centered_box">
+    		<div id="spot_intro_box"><img src="/images/spot.png"/></div>
+            <div id="intro_text">
+            	<p><span style="font-size:40px;">W</span>elcome to SpotOn Trivia. SpotOn uses your location to create a custom trivia experience for you, and people around you. Before we can begin playing, we need you to login into foursquare.</p> <p>Don't have a foursquare account? <a href="game.html">Sign up here.</a> </p>
+            
+            </div>
+        </div>
+    </div>	
   </body>
 </html>
