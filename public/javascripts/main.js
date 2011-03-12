@@ -119,7 +119,26 @@ spoton.get_questions = function(session_id){
 		dataType:'json',
 		success:function(result){
 			spoton.questions = result;
-			spoton.show_question();
+			$('#ready').animate({left:'640px'},500, function(){
+				$('#ready').show();								 	
+				$('#ready').animate({left:'210px'}, 250, function(){
+					$('#ready').animate({opacity:0}, 1000, function(){
+						$('#set').show();								 	
+						$('#set').animate({left:'260px'}, 250, function(){
+							$('#set').animate({opacity:0}, 1000, function(){
+								$('#go').show();								 	
+								$('#go').animate({left:'260px'}, 250, function(){
+									$('#go').animate({opacity:0}, 500, function(){
+																					 
+											spoton.show_question();
+									});								 
+								});										 
+							});								 
+						});														
+					});								 
+				});
+			});
+			
 		}
 	}
 	spoton.log('Getting questions.');
