@@ -131,6 +131,7 @@ spoton.get_questions = function(session_id){
 									$('#go').animate({opacity:0}, 500, function(){
 																					 
 											spoton.show_question();
+											console.log('animated');
 									});								 
 								});										 
 							});								 
