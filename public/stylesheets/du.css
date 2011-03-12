@@ -357,13 +357,13 @@ a, a:visited {
 #title {
 	width:100%;
 	height:268px;
-	background:url(img/title.jpg) center no-repeat #fbeec2;
+	background:url(/images/title.jpg) center no-repeat #fbeec2;
 }
 
 #start_bar {
 	width:100%;
 	height:122px;
-	background:url(img/shadow_purp.png) repeat-x;
+	background:url(/images/shadow_purp.png) repeat-x;
 	line-height:150px;
 	text-align:center;
 }
