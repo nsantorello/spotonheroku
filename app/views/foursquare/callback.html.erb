@@ -6,6 +6,7 @@
 	<title>SpotOn Trivia</title>
 	<script type="text/javascript" charset="utf-8" src="/javascripts/jquery-1.5.1.min.js"></script>
 	<script type="text/javascript" charset="utf-8" src="/javascripts/main.js"></script>
+	<script type="text/javascript" charset="utf-8" src="/javascripts/du.js"></script>
 	<script type="text/javascript" charset="utf-8">
 		//token goes here
 		spoton.player_id = <%= @player.id %>;
@@ -32,7 +33,10 @@
 		</div>
 		<div id="question">
 			<div class="centered_box">
-				<div id="question_text"></div>
+				<div id="question_wrapper">
+                	<div id="ready_msg"><img id="ready" src="/images/text_ready.png" /><img id="set" src="/images/text_set.png" /><img id="go" src="/images/text_go.png" /></div>
+					<div id="question_text"></div>
+				</div>
 				<div id="spot_box"><img src="/images/spot.png" /></div>
 				<div id="answers">
 					<ol></ol>
