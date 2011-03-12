@@ -195,7 +195,7 @@ spoton.show_question = function(){
 						$('#answers ol li[answer_id=' + value.answer_id +']').css('background','#65BE59');
 						spoton.questions_prog = spoton.questions_prog + 1;
 						spoton.number_played = spoton.number_played + 1;
-						navigator.notification.vibrate(500);
+						// navigator.notification.vibrate(500);
 						setTimeout('spoton.show_question();',2000);
 					}
 				});
