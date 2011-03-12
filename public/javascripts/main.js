@@ -53,7 +53,7 @@ spoton.get_venues = function(){
 		jQuery.ajax(venue_query);
 	}
 	$('#venues_header').css('color','#000').empty().append('Loading Venues');
-	$('#venues').css('background','url(/images/loading.gif)').css('background-position','top center').css('background-repeat','no-repeat');
+	$('#venues').css('background','url(/images/loading.gif)').css('background-position','top center').css('background-repeat','no-repeat').css('height', '100%');
 	// $('#location').append('Looking for nearby venues.');
 
 	//real-geo
